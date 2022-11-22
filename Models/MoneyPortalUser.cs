@@ -9,15 +9,17 @@ namespace MoneyPortal.Models
 
         [Required]
         [Display(Name = "First Name")]
-        public string FirstName { get; set; }
+        [StringLength(50, ErrorMessage = "The {0} must be at least {2} and no more than {1} characters long.", MinimumLength = 2)]
+        public string? FirstName { get; set; }
 
         [Required]
         [Display(Name = "Last Name")]
-        public string LastName { get; set; }
+        [StringLength(50, ErrorMessage = "The {0} must be at least {2} and no more than {1} characters long.", MinimumLength = 2)]
+        public string? LastName { get; set; }
 
         [NotMapped]
         [Display(Name = "Full Name")]
-        public string FullName { get { return $"{FirstName} {LastName}"; } }
+        public string? FullName { get { return $"{FirstName} {LastName}"; } }
     }
 }
 
