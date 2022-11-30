@@ -11,11 +11,11 @@ namespace MoneyPortal.Models
 
         [Required]
         [Display(Name = "Amount")]
-        public int TransactionAmount { get; set; }
+        public decimal TransactionAmount { get; set; }
 
         [Required]
         [Display(Name = "Transaction Type")]
-        public int TransactionType { get; set; }
+        public decimal TransactionType { get; set; }
 
         [Required]
         [Display(Name = "Memo")]
