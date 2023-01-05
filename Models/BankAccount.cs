@@ -16,16 +16,27 @@ namespace MoneyPortal.Models
         [Display(Name = "Account Type")]
         public BankAccountType BankAccountType { get; set; }
 
-        //[Display(Name = "Current Balance")]
+        [DataType(DataType.DateTime)]
+        [Display(Name = "Date Created")]
+        public DateTimeOffset DateCreated { get; set; }
+
+        [DataType(DataType.DateTime)]
+        [Display(Name = "Date Updated")]
+        public DateTimeOffset? DateUpdated { get; set; }
+
+        [Display(Name = "Low Balance Alert")]
+        public int LowBalanceAlertId { get; set; }
+
+        [Display(Name = "Current Balance")]
         public int CurrentBalanceId { get; set; }
 
-        //[Display(Name = "Monthly Spending")]
+        [Display(Name = "Monthly Spending")]
         public int MonthlySpendingId { get; set; }
 
-        //[Display(Name = "Monthly Deposits")]
+        [Display(Name = "Monthly Deposits")]
         public int MonthlyDepositsId { get; set; }
 
-        //[Display(Name = "Monthly Transactions")]
+        [Display(Name = "Monthly Transactions")]
         public int MonthlyTransactionsId { get; set; }
     }
 }
