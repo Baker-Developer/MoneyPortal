@@ -20,6 +20,24 @@ namespace MoneyPortal.Models
         [NotMapped]
         [Display(Name = "Full Name")]
         public string? FullName { get { return $"{FirstName} {LastName}"; } }
+
+        [NotMapped]
+        [DataType(DataType.Upload)]
+        public IFormFile? IImageFile { get; set; }
+
+        [Display(Name = "Avatar")]
+        public string? ImageFileName { get; set; }
+
+        public byte[]? ImageFileData { get; set; }
+
+        [Display(Name = "File Extention")]
+        public string? ImageContentType { get; set; }
+
+        public int? HouseholdId { get; set; }
+
+        // Navigation Properties
+        public virtual Household? Household { get; set; }
+        public virtual ICollection<BankAccount>? BankAccount { get; set; } = new HashSet<BankAccount>();
     }
 }
 

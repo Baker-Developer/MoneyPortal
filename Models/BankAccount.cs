@@ -24,6 +24,9 @@ namespace MoneyPortal.Models
         [Display(Name = "Date Updated")]
         public DateTimeOffset? DateUpdated { get; set; }
 
+        [Display(Name = "Household")]
+        public int HouseholdId { get; set; }
+
         [Display(Name = "Low Balance Alert")]
         public int LowBalanceAlertId { get; set; }
 
@@ -38,5 +41,18 @@ namespace MoneyPortal.Models
 
         [Display(Name = "Monthly Transactions")]
         public int MonthlyTransactionsId { get; set; }
+
+        [Display(Name = "Account Owner")]
+        public string? MoneyPortalUserId { get; set; }
+
+        // Navigation Properties
+        public virtual ICollection<UserBankAccountTransactions>? UserAccountTransactions { get; set; } = new HashSet<UserBankAccountTransactions>();
+        public virtual Household? Household { get; set; }
+        public virtual MoneyPortalUser? MoneyPortalUser { get; set; }
+        public virtual BankAccountBalance? BankAccountBalance { get; set; }
+        public virtual BankAccountDeposits? BankAccountDeposits { get; set; }
+        public virtual BankAccountLowBalance? BankAccountLowBalance { get; set; }
+        public virtual BankAccountMonthlyTransactions? BankAccountMonthlyTransactions { get; set; }
+        public virtual BankAccountSpending? BankAccountSpending { get; set; }
     }
 }

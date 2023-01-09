@@ -3,10 +3,10 @@ using System.Xml.Linq;
 
 namespace MoneyPortal.Models
 {
-    public class BankAccountLowBalance
+    public class HouseholdMonthlySpending
     {
         public int Id { get; set; }
-        [Display(Name = "Low Balance Alert")]
-        public int LowBalanceAlert { get; set; }
+        [Display(Name = "Monthly Spending")]
+        public int TotalHouseholdMonthlySpending { get; set; }
     }
 }

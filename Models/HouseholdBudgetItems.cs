@@ -1,6 +1,6 @@
 ﻿namespace MoneyPortal.Models
 {
-    public class HouseholdTransactions
+    public class HouseholdBudgetItems
     {
     }
 }
